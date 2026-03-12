@@ -1,0 +1,7 @@
+$ ssh-keygen -s /path/to/ca_key -I id -n user \
+      /path/to/user_key.pub
+$ ssh-keygen -s /path/to/ca_key -I id -h -n foo.example.org \
+      /path/to/host_key.pub
+ $ ssh-keygen -s ca_key.pub -D libpkcs11.so -I id -n user \
+      user_key.pub
+$ ssh-keygen -Us ca_key.pub -I id -n user user_key.pub
