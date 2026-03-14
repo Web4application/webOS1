@@ -1,0 +1,37 @@
+// Success return
+{
+    "returnValue" : true,
+    "modelName" : "WEBOS1",
+    "firmwareVersion" : "3.00.00",
+    "UHD":"true",
+    "sdkVersion":"1.05.00"
+}
+
+// Failure return
+{
+    "returnValue" : false,
+    "errorCode" : "ERROR_06",
+    "errorText" : "Invalid argument."
+}
+
+
+// Subscription example
+
+// First response
+{ 
+    "returnValue" : true, 
+    "modelName" : "WEBOS1", 
+    "firmwareVersion" : "3.00.00" 
+}
+
+// When modelName is changed to "WEBOS2"
+{ 
+    "returnValue" : true, 
+    "modelName" : "WEBOS2" 
+}
+
+// When firmwareVersion is changed to "3.02.00"
+{ 
+    "returnValue": true, 
+    "firmwareVersion" : "3.02.00" 
+}
