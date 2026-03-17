@@ -76,3 +76,28 @@ const webOS = {
 
 // Export to Global Scope
 window.webOS = webOS;
+webOS.printLanding = function(landingId) {
+    // 1. Temporarily focus the landing content
+    const landing = document.getElementById(landingId);
+    landing.classList.add('landing-page');
+    
+    // 2. Trigger the browser print dialog (which uses the CSS above)
+    window.print();
+    
+    // 3. Cleanup after printing
+    landing.classList.remove('landing-page');
+};
+// kernel.js addition
+webOS.exportToPDF = function(elementId, filename = 'webOS-snapshot.pdf') {
+    const element = document.getElementById(elementId);
+    const options = {
+        margin:       10,
+        filename:     filename,
+        image:        { type: 'jpeg', quality: 0.98 },
+        html2canvas:  { scale: 2 }, // Higher scale = better quality
+        jsPDF:        { unit: 'mm', format: 'a4', orientation: 'landscape' }
+    };
+
+    // New Promise-based usage:
+    html2pdf().set(options).from(element).save();
+};
