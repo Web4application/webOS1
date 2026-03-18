@@ -1,0 +1,13 @@
+{
+  "system": {
+    "hostname": "Web4-Terminal-01",
+    "version": "1.0.1-alpha",
+    "kernel": "WebOS-Core-v1",
+    "uptime": "1024ms"
+  },
+  "ai_agent": {
+    "status": "Listening",
+    "model": "GPT5-Mini",
+    "memory_usage": "14%"
+  }
+}
