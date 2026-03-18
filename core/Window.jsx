@@ -89,3 +89,4 @@ const handleMouseUp = () => {
 };
 <button onClick={() => toggleMinimize(data.id)}>-</button>
 <button onClick={() => toggleMaximize(data.id)}>⬜</button>
+if (data.minimized) return null;
