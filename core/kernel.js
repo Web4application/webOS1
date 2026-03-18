@@ -101,3 +101,35 @@ webOS.exportToPDF = function(elementId, filename = 'webOS-snapshot.pdf') {
     // New Promise-based usage:
     html2pdf().set(options).from(element).save();
 };
+webOS.generateFirmPDF = function(data) {
+    // 1. Create a temporary container
+    const printArea = document.createElement('div');
+    printArea.className = 'firm-template';
+    
+    // 2. Build the 'Odd' Grid from data
+    printArea.innerHTML = `
+        <div class="firm-header">System Report: ${data.title}</div>
+        <div class="label">Kernel ID</div> <div class="content">${data.id}</div>
+        <div class="label">Timestamp</div> <div class="content">${new Date().toISOString()}</div>
+        <div class="label">Status</div>    <div class="content">VERIFIED</div>
+    `;
+
+    // 3. Append, Print, and Remove
+    document.body.appendChild(printArea);
+    window.print(); 
+    document.body.removeChild(printArea);
+};
+webOS.printBento = function(elementId) {
+    const element = document.getElementById(elementId);
+    
+    const options = {
+        margin: 5,
+        filename: 'app-snapshot.pdf',
+        image: { type: 'jpeg', quality: 1 },
+        html2canvas: { scale: 3 }, // Keeps the "Firm" edges sharp
+        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+    };
+
+    html2pdf().set(options).from(element).save();
+};
+
