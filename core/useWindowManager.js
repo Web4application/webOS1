@@ -58,3 +58,27 @@ const updateSize = (id, width, height) => {
     )
   );
 };
+const toggleMinimize = (id) => {
+  setWindows(prev =>
+    prev.map(w =>
+      w.id === id ? { ...w, minimized: !w.minimized } : w
+    )
+  );
+};
+
+const toggleMaximize = (id) => {
+  setWindows(prev =>
+    prev.map(w =>
+      w.id === id
+        ? {
+            ...w,
+            maximized: !w.maximized,
+            x: 0,
+            y: 0,
+            width: window.innerWidth,
+            height: window.innerHeight - 40,
+          }
+        : w
+    )
+  );
+};
