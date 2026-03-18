@@ -31,3 +31,82 @@
         margin-bottom: 20px;
     }
 }
+
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+    grid-auto-rows: 150px; /* Base height for boxes */
+    gap: 15px;
+    padding: 20px;
+    background: #f4f4f4;
+    font-family: 'Inter', sans-serif;
+}
+
+.bento-item {
+    background: white;
+    border: 2px solid #000; /* Firm border */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* The "Odd" Spanning Logic */
+.main-card {
+    grid-column: span 2; /* Spans 2 columns wide */
+    background: #000;
+    color: #fff;
+}
+
+.ai-card {
+    grid-row: span 2; /* Spans 2 rows tall */
+    border-color: #007bff; /* Color accent for AI */
+}
+
+.label {
+    font-size: 0.7rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: #666;
+}
+
+.value {
+    font-size: 1.5rem;
+    font-weight: 900;
+}
+/* Firm Document Styling */
+.firm-template {
+    display: grid;
+    grid-template-columns: 150px 1fr; /* Odd, asymmetric width */
+    gap: 0;
+    border: 3px solid #000;
+    font-family: 'Courier New', monospace;
+    background: #fff;
+    width: 210mm; /* Standard A4 Width */
+    min-height: 297mm;
+    margin: auto;
+}
+
+.firm-header {
+    grid-column: span 2;
+    background: #000;
+    color: #fff;
+    padding: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.label {
+    border-right: 2px solid #000;
+    border-bottom: 1px solid #000;
+    padding: 10px;
+    font-weight: bold;
+    background: #f0f0f0;
+}
+
+.content {
+    border-bottom: 1px solid #000;
+    padding: 10px;
+}
+
+
