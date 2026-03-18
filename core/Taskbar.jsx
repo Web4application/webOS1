@@ -43,3 +43,8 @@ export default function Taskbar() {
     </div>
   );
 }
+const [open, setOpen] = useState(false);
+
+<button onClick={() => setOpen(!open)}>🟢</button>
+
+{open && <StartMenu />}
